@@ -38,7 +38,7 @@ class Check extends Model
 
     public function host(): BelongsTo
     {
-        return $this->belongsTo(config('server-monitor.host_model', Host::class), (Host::class)->getTable() . '_id');
+        return $this->belongsTo(config('server-monitor.host_model', Host::class), (new Host)->getTable() . '_id');
     }
 
     public function scopeHealthy($query)
